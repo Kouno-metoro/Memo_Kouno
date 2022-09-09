@@ -1,4 +1,3 @@
-<初期設定>
 1.メールアドレスの設定
     git config --global user.name “ユーザ名”
     git config --global user.email アドレス
@@ -23,3 +22,12 @@
 
     git status --ignored
     ファイルの状態を表示
+5.コミット
+    git commit -m "コミットメッセージ"
+    コミットする
+6.リモートリポジトリとの紐づけ
+    git remote add origin "リモートリポジトリのURL"
+    リモートリポジトリのURLを登録する
+7.プッシュ
+    git push origin master
+    コミットされたものがリモートリポジトリにアップロードされる
