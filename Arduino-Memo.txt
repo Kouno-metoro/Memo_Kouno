@@ -1,0 +1,80 @@
+関数
+    main
+        setup()
+            一番初めに実行される
+        loop()
+            main関数とおもってOK
+    基本
+        delay(時間)
+            ミリ秒で指定。32767より大きい整数を指定するときは、値の後ろにULを付け加える。
+    入出力
+        pinMode(ピン番号,状態)
+            状態にはINPUTかOUTPUTのどちらかを入れる
+        digitalWrite(ピン番号,状態)
+            状態にはHIGHかLOWのどちらかを入れる
+        digitalRead(ピン番号)
+            ピン番号の電圧を1or0で判定し、返す
+        analogWrite(ピン番号, 電圧)
+            使えるピン番号に制限アリ
+            電圧は0~255の範囲で指定
+        analogRead(ピン番号)
+            使えるピン番号に制限アリ
+    UART
+        Serial.beginポート番号(速度)
+            速度を指定する。setup関数に入れるのがベター？
+            ポートが複数ある場合のみポート番号を指定
+        Serial.end
+            UART端子を入出力端子に変更
+        Serial.print(出力,フォーマット)
+            ASCIIテキストで出力する。
+            フォーマットで出力方式を指定可能
+                BIN(2進数)
+                OCT(8進数)
+                DEC(10進数)
+                HEX(16進数)
+                数値(有効桁数)
+        Serial.println(出力,フォーマット)
+            Serial.printnに同じ。改行コードを最後に出力
+        Serial.Write(文字)
+            文字を出力する
+        Serial.available()
+            データを受信すると1を返す。
+        Serialread()
+            受信データを読みこむ
+        Serial.flush()
+            データの出力が終わるまで待つ      
+        変数名.length()
+            変数名に入っている文字列の文字数を返す
+        変数名.charAt(数値)
+            変数名に入っている文字列の数値番目の文字を返す
+        変数名.toInt
+            変数名に入っている文字列の数値をint型の数値に変換したものを返す
+    乱数
+        randomSeed(数値)
+            適当に指定しましょう
+        random(最小,最大)
+            それぞれ指定しましょう
+ライブラリ
+    準備
+        ファイル名.cppとファイル名.hとkeywords.txtを準備
+    cppファイル
+        先頭に#include"arduino.h"と#include"ファイル名.h"を付ける。
+        その後、自作関数を記述
+    hファイル
+        先頭に#ifndef _ファイル名_hと#define _ファイル名_.hを付ける。
+        その後自作関数の宣言を書く
+        最後に#endifを付ける。
+    txtファイル
+        arduinoIDEで特定キーワードに色を付ける。
+        キーワード(タブキー空白)種類
+            KEYWORD1 赤太字
+            KEYWORD2 赤細字
+            KEYWORD3
+            LITERAL1 青字
+            LITERAL2
+            RESERVED_WORD
+            RESERVED_WORD2
+            DATA_TYPE
+            PREPROCESSOR
+    その後
+        zipファイルにしてインストール
